@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { BeakerIcon } from '@heroicons/react/24/solid'
-
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Header() {
     return (
@@ -26,7 +26,7 @@ export default function Header() {
 
                 </div>
                 <div className="text-white flex items-center text-xs space-x-6 whitespace-nowrap mx-6">
-                    <div className="box link focus:border-blue-400">
+                    <div className="box link focus:border-blue-400" onClick={signIn}>
                         <p className="text ">Hola, identificate</p>
                         <p className="text font-extrabold md:text-sm  ">Cuenta y listas</p>
                     </div>
